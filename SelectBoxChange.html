@@ -1,0 +1,68 @@
+<div id="courseDetails" style="display: flex;">
+	<div>
+		<label for="fieldID">Field</label><br>
+        	<select id="fieldID">
+                	<option>Choose the Field</option>
+                </select>
+	</div>
+                                
+	<div>
+		<label for="courseID">Courses</label><br>
+     		<select id="courseID"></select>
+	</div>                                
+</div>
+
+<script>
+
+	let fieldVar = 
+['Programming Languages', 'Web Development', 'Data Science', 'Cloud Computing'];
+
+	let coursePL = 
+['C', 'C++', 'C#', 'Python', 'Java', 'HTML CSS JS', 'TypeScript', 'R', 'php', 'Ruby', 'Kotlin'];
+
+let courseWD = 
+['Frontend Web Development', 'MERN Stack', 'Python Full Stack Web Development', 'Java Full Stack Web Development'];
+
+let courseDS = ['Python Data Science'];
+
+let courseCC = ['Microsoft Azure', 'AWS'];
+
+let slTag1 = document.getElementById('fieldID');
+let slTag2 = document.getElementById('courseID');
+ 
+ 
+fieldVar.forEach(function addFields(item){
+	let option = document.createElement('option');
+	option.text = item;
+	option.value = item;
+	slTag1.appendChild(option);
+});
+
+slTag1.onChange = function () {
+	slTag2.innerHTML = "<option></option>"
+	if (this.value == 'Programming Languages'){
+		addToslTag2FC(coursePL)
+	};
+
+	if (this.value == 'Web Development'){
+		addToslTag2FC(courseWD)
+	};
+
+	if (this.value == 'Data Science'){
+		addToslTag2FC(courseDS)
+	};
+
+	if (this.value == 'Cloud Computing'){
+		addToslTag2FC(courseCC)
+	};
+
+function addToslTag2FC(arr1) {
+	arr.forEach(function (item) {
+	let option = document.createElement('option');
+	option.text = item;
+	option.value = item;
+	slTag2.appendChild(option);
+});
+
+}
+</script>
